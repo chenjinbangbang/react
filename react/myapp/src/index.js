@@ -12,11 +12,11 @@ function Compoment() {
 }
 
 //容器的写法
-class Title extends Component{
-  constructor(props){
+class Title extends Component {
+  constructor(props) {
     super(props);
   }
-  render(props){
+  render(props) {
     return <h1>{this.props.children}</h1>
   }
 };
@@ -29,12 +29,12 @@ class ES6Component extends Component {
     };
     //this.handleClick = this.handleClick.bind(this); //给事件修改this作用域
   }
-  handleClick(){
+  handleClick() {
     this.setState({
       age: this.state.age + 1
     });
   }
-  onValueChange(e){
+  onValueChange(e) {
     this.setState({
       age: e.target.value
     });
@@ -49,8 +49,8 @@ class ES6Component extends Component {
       <div>
         <h1>I am {this.props.name}</h1>
         <h2>{this.state.age}</h2>
-        <button  onClick={(e) => {this.handleClick(e)}}>加一岁</button>
-        <input type="text" onChange={(e) => {this.onValueChange(e)}}/>
+        <button onClick={(e) => { this.handleClick(e) }}>加一岁</button>
+        <input type="text" onChange={(e) => { this.onValueChange(e) }} />
       </div>
     );
   }
@@ -63,7 +63,7 @@ let names = ["Rosen", "Geely", "Jimin"];
 let flag = false;
 let jsx = (
   <div className="jsx" style={style}>
-    <App/>
+    <App />
     <Title>
       <span>App Span</span>
     </Title>
@@ -75,7 +75,7 @@ let jsx = (
     } */}
     <Compoment />
     <ES6Component name="Rosen" />
-    
+
   </div>
 );
 ReactDOM.render(jsx, document.getElementById("root"));
